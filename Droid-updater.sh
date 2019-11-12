@@ -2,7 +2,7 @@
 echo "Delete old APK"
 rm -f pogodroid.apk
 echo "Download new APK"
-curl -o pogodroid.apk -k -s https://www.maddev.eu/apk/PogoDroid.apk
+curl -L -o PogoDroid.apk -k -s https://www.maddev.de/apk/PogoDroid.apk
 
 FILE=pogodroid.apk
 if test -f "$FILE"; then
