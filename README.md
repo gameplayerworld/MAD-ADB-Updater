@@ -2,6 +2,9 @@
 #### Download
 git clone https://github.com/gameplayerworld/MAD-ADB-Updater.git
 
+#### Requirements.txt
+Bash 4.x or later
+
 #### devices.txt
 The IP addresses of the devices must be entered in this file.
 
