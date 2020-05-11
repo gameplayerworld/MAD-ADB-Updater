@@ -1,18 +1,16 @@
 #!/bin/bash
 echo "Start"
-if [ -z "$1" ]; then
-    echo "Commandline options are missing! Usage: ./Pogo-updater.sh pogo.apkm"
-    exit 1
-    fi
-
 echo "Delete old Files"
 ##delete
-rms *.zip
+rm *.zip
 rm *.apk
 rm icon.png
-rm pogo.zip
 rm .info.json
 sleep 2
+
+##Get apkm
+echo "Fetch latest apkm"
+curl -s -k -A "Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3" -L -o ./pogo.apkm "https://www.apkmirror.com/wp-content/themes/APKMirror/download.php?id=$(curl -s -k -A "Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3" -L "$(curl -s -k -A "Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3" -L 'https://www.apkmirror.com/apk/niantic-inc/pokemon-go/variant-%7B%22arches_slug%22%3A%5B%22armeabi-v7a%22%5D%7D/'|  grep -o -P "(?<=href=\").*android-apk-download"|head -n1|eval 'stdin=$(cat); echo "https://apkmirror.com$stdin"')"|grep data-postid|head -n1|awk -F'"' '{print $14}')"
 
 ##Unapkm exist
 echo "unapkm File check"
@@ -27,7 +25,7 @@ echo "Install APK"
 
 #unzip
 echo "unzip"
-java -jar unapkm.jar $1 pogo.zip
+java -jar unapkm.jar ./pogo.apkm pogo.zip
 unzip pogo.zip
 
 ##Install
