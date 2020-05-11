@@ -13,10 +13,7 @@ In order not to always have to update the file, you should assign a fixed addres
 
 ADB must be switched on on the device.
 
-#### Pogo-updater
-- Is currently unusable (Niantic has changed the way they sell Android APKs)
-
-#### Manuel-Pogo-updater 
+#### Pogo-updater 
 - For this, the current Pogo.apkm file is downloaded from APK Mirror and install on all devices that are storied in the file devices.txt.
 __Run: bash Manuel-Pogo-updater.sh__
 
