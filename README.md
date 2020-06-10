@@ -26,7 +26,7 @@ For this, the current Pogo.apkm file must be downloaded and pushed into the MAD-
 
 #### Pogodroid-updater 
 - Here the current PogoDroid file is downloaded and installed on all devices that are stored in the file devices.txt.
-__Run: bash Pogodroid-updater.sh__
+__Run: bash Droid-updater.sh__
 
 #### RGC-updater
 - Here the current RGC file is downloaded and installed on all devices that are stored in the file devices.txt.
